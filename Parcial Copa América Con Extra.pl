@@ -110,10 +110,6 @@ unidades(tiempo(1,_),50).
 unidades(tiempo(2,Minuto),Minuto).
 unidades(penales(N),Cantidad):-Cantidad is N * 10.
 
-%######## Extra
-idolo(jugador1).
-chanta(jugador2).
-
 % hay que cambiar el hizoGol
 hizoGol(Equipo1,Equipo2,Fase, TipoDeGol):-
     esDelEquipo(Jugador,Equipo1),
@@ -141,6 +137,6 @@ valorDeGol(mano, 0).
 valorDeGol(pared(Jugadores), Valor) :-
     Valor is Jugadores - 1.
 valorDeGol(fueraDelArea(Metros), 3) :-
-  Metros > 10.
+  Metros >= 10.
 valorDeGol(fueraDelArea(Metros), 1) :-
   Metros < 10.
